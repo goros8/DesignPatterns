@@ -1,8 +1,10 @@
+package strategy;
+import java.util.Random;
 
 public abstract class Player {
     private String firstName;
     private String lastName;
-    protected OffenceBehavior offenceBehavior;
+    protected OffenseBehavior offenseBehavior;
     protected DefenceBehavior defenceBehavior;
     protected Random rand;
 
@@ -12,16 +14,20 @@ public abstract class Player {
         rand = new Random();
     }
 
-    public abstract void setOffenceBehavior();
+    public abstract void setOffenseBehavior();
 
     public abstract void setDefenceBehavior();
 
-    public abstract String play(boolean possession);
+    public String play(boolean possession) {
+        if (possession) {
+            return toString() + "Offense: " + offenseBehavior.play();
+        } else {
+            return toString() + "Defence: " + defenceBehavior.play();
+        }
+    }
 
-    @Override
+    
     public String toString() {
         return firstName + " " + lastName + " plays the position: ";
     }
-
-  
 }
