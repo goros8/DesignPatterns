@@ -8,7 +8,7 @@ public class Defenceman extends Player {
     }
 
     public void setOffenseBehavior() {
-        // 90% of the time set offence behavior to PassBehavior, the other 10% set it to SlapShotBehavior
+        // 90% of the time set offence behavior to pass b the other 10% set it to SlapShotBehavior
         if (Math.random() < 0.9) {
             offenseBehavior = new PassBehavior();
         } else {
@@ -17,7 +17,7 @@ public class Defenceman extends Player {
     }
 
     public void setDefenceBehavior() {
-        // 90% of the time set defence behavior to BlockBehavior, the other 10% set it to ChasePuckBehavior
+        // 90% of the time set defence behavior to block b the other 10% set it to chase
         if (Math.random() < 0.9) {
             defenceBehavior = new BlockBehavior();
         } else {
