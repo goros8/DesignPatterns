@@ -18,7 +18,6 @@ public class Forward extends Player {
             this.offenseBehavior = new ShootBehavior();
         }    }
 
-    @Override
     public void setDefenceBehavior() {
         if (Math.random() < 0.5) {
             this.defenceBehavior = new ChasePuckBehavior();
@@ -26,10 +25,13 @@ public class Forward extends Player {
             this.defenceBehavior = new BlockBehavior();
         }    }
 
-    @Override
-    public String play(boolean possession) {
-        return super.toString() + " plays the position: Forward\n" +
-                "Offense: " + offenseBehavior.play() + "\n" +
-                "Defence: " + defenceBehavior.play();
-    }
+        public String play(boolean possession) {
+            String offenseResult = offenseBehavior.play();
+            String defenceResult = defenceBehavior.play();
+            if (possession) {
+                return "Forward: " + offenseResult;
+            } else {
+                return "Forward: " + defenceResult;
+            }
+        }
 }

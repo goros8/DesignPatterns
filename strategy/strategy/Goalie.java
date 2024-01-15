@@ -20,9 +20,9 @@ public class Goalie extends Player {
         String offenseResult = offenseBehavior.play();
         String defenceResult = defenceBehavior.play();
         if (possession) {
-            return toString() + "Goalie: " + offenseResult;
+            return   "Goalie: " + offenseResult;
         } else {
-            return toString() + "Goalie: " + defenceResult;
+            return   "Goalie: " + defenceResult;
         }
     }
 }

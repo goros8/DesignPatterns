@@ -7,7 +7,6 @@ public class Defenceman extends Player {
         setDefenceBehavior();
     }
 
-    @Override
     public void setOffenseBehavior() {
         // 90% of the time set offence behavior to PassBehavior, the other 10% set it to SlapShotBehavior
         if (Math.random() < 0.9) {
@@ -17,7 +16,6 @@ public class Defenceman extends Player {
         }
     }
 
-    @Override
     public void setDefenceBehavior() {
         // 90% of the time set defence behavior to BlockBehavior, the other 10% set it to ChasePuckBehavior
         if (Math.random() < 0.9) {
@@ -27,14 +25,13 @@ public class Defenceman extends Player {
         }
     }
 
-    @Override
     public String play(boolean possession) {
         String offenseResult = offenseBehavior.play();
         String defenceResult = defenceBehavior.play();
         if (possession) {
-            return toString() + "Defenceman: " + offenseResult;
+            return  "Defenceman: " + offenseResult;
         } else {
-            return toString() + "Defenceman: " + defenceResult;
+            return  "Defenceman: " + defenceResult;
         }
     }
 }
